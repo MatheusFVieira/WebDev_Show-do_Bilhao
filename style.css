@@ -1,0 +1,145 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Corpo da página */
+body {
+    background: linear-gradient(135deg, #0a1931, #16213e, #1b1e3f);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container principal */
+.container {
+    max-width: 600px;
+    background: rgba(10, 25, 49, 0.9);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.5s ease-in-out;
+    border: 2px solid #0f3460;
+}
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Títulos */
+h1 {
+    font-size: 28px;
+    color: #00a6ff;
+    margin-bottom: 20px;
+}
+
+/* Texto geral */
+p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Formulários */
+form {
+    margin-top: 15px;
+}
+
+/* Campos de entrada */
+input[type="text"], 
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #00a6ff;
+    border-radius: 5px;
+    background: #0f3460;
+    color: #fff;
+    font-size: 16px;
+}
+
+/* Botões */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #00a6ff;
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: #00c3ff;
+    transform: scale(1.05);
+}
+
+/* Perguntas */
+.question {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Alternativas */
+.answers label {
+    display: block;
+    background: #1b1e3f;
+    padding: 12px;
+    border-radius: 6px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.answers input {
+    display: none;
+}
+
+/* Efeito ao passar o mouse */
+.answers label:hover {
+    background: #16213e;
+}
+
+/* Efeito ao selecionar */
+.answers input:checked + label {
+    background: #00a6ff;
+    color: black;
+    font-weight: bold;
+    border: 2px solid #fff;
+}
+
+/* Mensagens de erro */
+.error {
+    color: #ff4c4c;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Rodapé */
+footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ddd;
+    text-align: center;
+}
