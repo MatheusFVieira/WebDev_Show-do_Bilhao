@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +5,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* Corpo da página */
 body {
     background: linear-gradient(135deg, #0a1931, #16213e, #1b1e3f);
     color: #fff;
@@ -19,7 +17,6 @@ body {
     justify-content: center;
 }
 
-/* Container principal */
 .container {
     max-width: 600px;
     background: rgba(10, 25, 49, 0.9);
@@ -30,7 +27,6 @@ body {
     border: 2px solid #0f3460;
 }
 
-/* Animação de fade-in */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -42,26 +38,23 @@ body {
     }
 }
 
-/* Títulos */
 h1 {
     font-size: 28px;
     color: #00a6ff;
     margin-bottom: 20px;
 }
 
-/* Texto geral */
 p {
     font-size: 18px;
     margin-bottom: 15px;
 }
 
-/* Formulários */
 form {
     margin-top: 15px;
 }
 
-/* Campos de entrada */
-input[type="text"], 
+input[type="text"],
+input[type="email"] ,
 input[type="password"] {
     width: 100%;
     padding: 12px;
@@ -73,7 +66,6 @@ input[type="password"] {
     font-size: 16px;
 }
 
-/* Botões */
 button {
     width: 100%;
     padding: 12px;
@@ -93,14 +85,12 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Perguntas */
 .question {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 15px;
 }
 
-/* Alternativas */
 .answers label {
     display: block;
     background: #1b1e3f;
@@ -116,12 +106,10 @@ button:hover {
     display: none;
 }
 
-/* Efeito ao passar o mouse */
 .answers label:hover {
     background: #16213e;
 }
 
-/* Efeito ao selecionar */
 .answers input:checked + label {
     background: #00a6ff;
     color: black;
@@ -129,14 +117,12 @@ button:hover {
     border: 2px solid #fff;
 }
 
-/* Mensagens de erro */
 .error {
     color: #ff4c4c;
     font-weight: bold;
     margin-top: 10px;
 }
 
-/* Rodapé */
 footer {
     margin-top: 20px;
     font-size: 14px;
