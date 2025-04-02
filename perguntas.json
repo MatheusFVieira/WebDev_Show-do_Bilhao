@@ -1,0 +1,12 @@
+[
+    {
+        "enunciado": "Qual é a capital do Brasil?",
+        "alternativas": ["São Paulo", "Rio de Janeiro", "Brasília", "Salvador"],
+        "resposta": 2
+    },
+    {
+        "enunciado": "Quem escreveu 'Dom Casmurro'?",
+        "alternativas": ["José de Alencar", "Machado de Assis", "Monteiro Lobato", "Carlos Drummond de Andrade"],
+        "resposta": 1
+    }
+]

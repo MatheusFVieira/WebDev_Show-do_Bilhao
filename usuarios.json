@@ -1,0 +1,14 @@
+[
+    {
+        "login": "admin",
+        "senha": "1234",
+        "email": "admin@email.com",
+        "nome": "Administrador"
+    },
+    {
+        "nome": "MATHEUS FREITAS VIEIRA",
+        "email": "matheus.vf06@gmail.com",
+        "login": "matheus",
+        "senha": "$2y$10$vnkzBQBvpS2d41Q7spKc0.MoLILyqZWpPcLiGkwiAjjsWvd1hBRm2"
+    }
+]
