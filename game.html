@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Show do Bilhão</title>
+</head>
+<body>
+    <div class="container">
+        <p>Pontuação: <strong id="pontuacao-atual">0</strong></p>
+        <h1 id="enunciado">Carregando pergunta...</h1>
+        
+        <form id="alternativas-form">
+            <div id="alternativas-container" class="answers"></div>
+            <button type="submit">Responder</button>
+        </form>
+
+        <button id="logout-button" style="background-color: #e63946; margin-top: 20px;">Sair do Jogo</button>
+    </div>
+    
+    <script src="js/game.js"></script>
+</body>
+</html>
