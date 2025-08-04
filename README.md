@@ -1,52 +1,47 @@
-# Show do Milhão - Jogo de Perguntas e Respostas
+# 🏆 Show do Bilhão - Jogo de Perguntas e Respostas
 
-Este projeto implementa um jogo de perguntas e respostas baseado no formato do programa **"Show do Milhão"**. O objetivo é que um jogador responda corretamente a uma sequência de perguntas de conhecimento geral, acumulando pontos a cada acerto. O jogo termina quando o jogador erra uma resposta.
+Bem-vindo ao Show do Bilhão! Um divertido jogo de perguntas e respostas desenvolvido inteiramente com **HTML, CSS e JavaScript**, pronto para ser hospedado em qualquer serviço de páginas estáticas como o GitHub Pages.
 
----
+Este projeto foi criado como um exercício prático para demonstrar a manipulação do DOM, o uso de `fetch` para consumir dados de um JSON, e o armazenamento de informações no navegador com `localStorage` e `sessionStorage`.
 
-## 📌 Tecnologias Utilizadas
-- **PHP**: Lógica do jogo e manipulação de sessões e arquivos
-- **HTML/CSS**: Estrutura e estilização da interface
-- **JSON**: Persistência de dados (usuários e perguntas)
+## ✨ Funcionalidades
 
----
+* **Cadastro e Login de Usuários:** Sistema completo de autenticação que armazena os dados dos usuários diretamente no navegador.
+* **Jogo Dinâmico:** A cada partida, 10 perguntas são sorteadas aleatoriamente de um banco de 20 questões, tornando cada jogo uma nova experiência.
+* **Objetivo Claro:** Acerte 10 perguntas seguidas para vencer o jogo!
+* **Feedback Imediato:** O jogador é redirecionado para uma tela de vitória ou de "Game Over" dependendo do seu desempenho.
+* **Armazenamento Local:** Utiliza `localStorage` para persistir os dados dos usuários e `sessionStorage` para gerenciar a sessão do jogador logado.
+* **Design Simples e Moderno:** Interface limpa e agradável, criada com CSS puro.
 
-## 🎮 Funcionalidades
+## 🛠️ Tecnologias Utilizadas
 
-### 📝 1. Exibição de Perguntas
-- As perguntas são armazenadas em um arquivo JSON e carregadas dinamicamente.
-- Cada pergunta tem um enunciado, alternativas e a resposta correta.
-- As perguntas são exibidas sequencialmente, uma por página.
+Este projeto foi construído utilizando apenas tecnologias front-end:
 
-### 📊 2. Progresso do Jogo
-- O jogador avança ao responder corretamente.
-- O jogo finaliza ao errar uma pergunta.
-- Exibição do progresso com a quantidade de perguntas respondidas corretamente.
+* **HTML5:** Para a estrutura das páginas.
+* **CSS3:** Para a estilização e o design.
+* **JavaScript (ES6+):** Para toda a lógica do jogo, incluindo manipulação de elementos, eventos e gerenciamento de dados.
 
-### 🔐 3. Autenticação de Jogadores
-- Cadastro de usuários (**nome, e-mail, login e senha**).
-- Armazenamento de credenciais em um arquivo JSON.
-- Login e controle de **sessão** para garantir que apenas usuários autenticados possam jogar.
-- **Cookies** armazenam informações sobre última partida e pontuação.
+Nenhuma biblioteca ou framework externo foi necessário!
 
-### 💾 4. Persistência de Dados
-- Perguntas e usuários são armazenados em arquivos **JSON**.
-- Sistema de **leitura e gravação** para manipular os dados.
+## 🚀 Como Jogar
 
----
+Existem duas maneiras simples de rodar este projeto:
 
-## 🚀 Como Executar
-1. Configure um servidor local como **XAMPP** ou **Laragon**.
-2. Coloque os arquivos do projeto na pasta `htdocs` (XAMPP) ou `www` (Laragon).
-3. Inicie o servidor Apache.
-4. Acesse o jogo pelo navegador: `http://localhost/show_do_bilhao/`.
+### 1. Localmente
 
----
+Não é necessário instalar nenhum servidor. Basta seguir os passos:
 
-## 📌 Melhorias Futuras
-- [ ] Implementação de um banco de dados SQL para maior escalabilidade.
-- [ ] Sistema de ranking com pontuações dos jogadores.
-- [ ] Melhorias no design e responsividade.
+1.  Clone este repositório para a sua máquina:
+    ```bash
+    git clone [https://github.com/MatheusFVieira/WebDev_Show-do_Bilhao.git](https://github.com/MatheusFVieira/WebDev_Show-do_Bilhao.git)
+    ```
+2.  Navegue até a pasta do projeto.
+3.  Abra o arquivo `index.html` em qualquer navegador de internet (como Chrome, Firefox, ou Edge).
 
----
+### 2. Online (GitHub Pages)
 
+Acesse pelo link [https://matheusfvieira.github.io/WebDev_Show-do_Bilhao/](https://matheusfvieira.github.io/WebDev_Show-do_Bilhao/)
+
+## ⚠️ Aviso de Segurança
+
+O sistema de cadastro e login deste projeto foi criado para **fins educacionais**. As senhas dos usuários são salvas em texto simples no `localStorage` do navegador. **Este método não é seguro** e nunca deve ser utilizado em aplicações reais ou em produção. Para sistemas que lidam com dados sensíveis, utilize sempre um back-end seguro com um banco de dados e criptografia adequada para as senhas.
