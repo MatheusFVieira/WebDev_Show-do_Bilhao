@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Over</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>😢 Game Over!</h1>
+    <p>Você respondeu corretamente <strong id="pontuacao-final">0</strong> perguntas.</p>
+
+    <p id="ultima-pontuacao-container" style="display: none;">
+        🏆 Última pontuação: <strong id="ultima-pontuacao"></strong>
+    </p>
+
+    <a href="index.html"><button>🔄 Jogar Novamente</button></a>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Pega a pontuação final da sessão atual
+        const pontuacao = sessionStorage.getItem('pontuacaoFinal') || 0;
+        document.getElementById('pontuacao-final').textContent = pontuacao;
+
+        // Pega a última pontuação salva no localStorage (persistente)
+        const ultimaPontuacao = localStorage.getItem('ultima_pontuacao');
+        if (ultimaPontuacao) {
+            document.getElementById('ultima-pontuacao').textContent = ultimaPontuacao;
+            document.getElementById('ultima-pontuacao-container').style.display = 'block';
+        }
+        
+        // Salva a pontuação atual como a "última pontuação" para a próxima vez
+        localStorage.setItem('ultima_pontuacao', pontuacao);
+
+        // Limpa os dados da sessão para o próximo jogo
+        sessionStorage.removeItem('usuarioLogado');
+        sessionStorage.removeItem('pontuacaoFinal');
+    });
+</script>
+
+</body>
+</html>
