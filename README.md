@@ -33,14 +33,14 @@ Não é necessário instalar nenhum servidor. Basta seguir os passos:
 
 1.  Clone este repositório para a sua máquina:
     ```bash
-    git clone https://github.com/MatheusFVieira/WebDev_Show-do_Bilhao.git
+    git clone https://github.com/MatheusFVieira/WebDev_ShowDoMilhao.git
     ```
 2.  Navegue até a pasta do projeto.
 3.  Abra o arquivo `index.html` em qualquer navegador de internet (como Chrome, Firefox, ou Edge).
 
 ### 2. Online (GitHub Pages)
 
-Acesse pelo link [https://matheusfvieira.github.io/WebDev_Show-do_Bilhao/](https://matheusfvieira.github.io/WebDev_Show-do_Bilhao/)
+Acesse pelo link [https://matheusfvieira.github.io/WebDev_Show-do_Bilhao/](https://matheusfvieira.github.io/WebDev_ShowDoMilhao/)
 
 ## ⚠️ Aviso de Segurança
 
