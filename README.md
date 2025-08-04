@@ -1,6 +1,6 @@
-# 🏆 Show do Bilhão - Jogo de Perguntas e Respostas
+# 🏆 Show do Milhão - Jogo de Perguntas e Respostas
 
-Bem-vindo ao Show do Bilhão! Um divertido jogo de perguntas e respostas desenvolvido inteiramente com **HTML, CSS e JavaScript**, pronto para ser hospedado em qualquer serviço de páginas estáticas como o GitHub Pages.
+Bem-vindo ao Show do Milhão! Um divertido jogo de perguntas e respostas desenvolvido inteiramente com **HTML, CSS e JavaScript**.
 
 Este projeto foi criado como um exercício prático para demonstrar a manipulação do DOM, o uso de `fetch` para consumir dados de um JSON, e o armazenamento de informações no navegador com `localStorage` e `sessionStorage`.
 
