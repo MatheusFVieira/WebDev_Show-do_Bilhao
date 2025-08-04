@@ -13,27 +13,23 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     let todasPerguntas = [];
     let perguntasDoJogo = [];
-    let perguntaAtualIndex = 0; // Agora controla o índice de 0 a 9
+    let perguntaAtualIndex = 0;
     const totalPerguntasParaVencer = 10;
 
-    // Função para embaralhar um array (Algoritmo de Fisher-Yates)
     function embaralharArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]]; // Troca os elementos
+            [array[i], array[j]] = [array[j], array[i]];
         }
     }
 
-    // Função para carregar e preparar as perguntas
     async function prepararJogo() {
         try {
             const response = await fetch("perguntas.json");
             todasPerguntas = await response.json();
-            
-            // Embaralha todas as perguntas carregadas
+
             embaralharArray(todasPerguntas);
-            
-            // Pega as 10 primeiras perguntas do array embaralhado
+
             perguntasDoJogo = todasPerguntas.slice(0, totalPerguntasParaVencer);
 
         } catch (error) {
@@ -44,13 +40,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // 2. LÓGICA DE EXIBIÇÃO
     function exibirPergunta() {
-        // Limpa as alternativas da pergunta anterior
         alternativasContainer.innerHTML = "";
         
         const pergunta = perguntasDoJogo[perguntaAtualIndex];
         
         enunciadoElement.textContent = pergunta.enunciado;
-        // A pontuação agora mostra o progresso (Ex: 1 / 10)
         pontuacaoElement.textContent = `${perguntaAtualIndex + 1} / ${totalPerguntasParaVencer}`;
 
         pergunta.alternativas.forEach((alternativa, index) => {
@@ -59,7 +53,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             input.name = "resposta";
             input.value = index;
             input.id = `alt-${index}`;
-            input.required = true; // Torna obrigatório escolher uma opção
+            input.required = true;
 
             const label = document.createElement("label");
             label.htmlFor = `alt-${index}`;
@@ -82,10 +76,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         const respostaDoUsuario = parseInt(respostaSelecionada.value);
 
         if (respostaDoUsuario === respostaCorreta) {
-            // Se acertou, avança para a próxima pergunta
             perguntaAtualIndex++;
-            
-            // Verifica se o jogador venceu
+
             if (perguntaAtualIndex >= totalPerguntasParaVencer) {
                 window.location.href = "vitoria.html";
             } else {
@@ -93,8 +85,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
 
         } else {
-            // Se errou, vai para a tela de game over
-            // Salva a pontuação (quantas acertou antes de errar)
             sessionStorage.setItem("pontuacaoFinal", perguntaAtualIndex);
             window.location.href = "gameover.html";
         }
@@ -106,8 +96,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     // 4. INICIALIZAÇÃO DO JOGO
-    await prepararJogo(); // Espera as perguntas carregarem e serem embaralhadas
-    exibirPergunta(); // Exibe a primeira pergunta do desafio
+    await prepararJogo();
+    exibirPergunta(); 
 
     alternativasForm.addEventListener("submit", verificarResposta);
     logoutButton.addEventListener("click", fazerLogout);

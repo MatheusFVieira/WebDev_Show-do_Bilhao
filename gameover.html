@@ -21,21 +21,17 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // Pega a pontuação final da sessão atual
         const pontuacao = sessionStorage.getItem('pontuacaoFinal') || 0;
         document.getElementById('pontuacao-final').textContent = pontuacao;
 
-        // Pega a última pontuação salva no localStorage (persistente)
         const ultimaPontuacao = localStorage.getItem('ultima_pontuacao');
         if (ultimaPontuacao) {
             document.getElementById('ultima-pontuacao').textContent = ultimaPontuacao;
             document.getElementById('ultima-pontuacao-container').style.display = 'block';
         }
-        
-        // Salva a pontuação atual como a "última pontuação" para a próxima vez
-        localStorage.setItem('ultima_pontuacao', pontuacao);
 
-        // Limpa os dados da sessão para o próximo jogo
+        localStorage.setItem('ultima_pontuacao', pontuacao);
+        
         sessionStorage.removeItem('usuarioLogado');
         sessionStorage.removeItem('pontuacaoFinal');
     });

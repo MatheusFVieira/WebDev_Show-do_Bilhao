@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Você Venceu!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🏆 Parabéns! Você Venceu!</h1>
+    <p>Você acertou todas as <strong>10</strong> perguntas e ganhou o Show do Milhão!</p>
+
+    <a href="index.html"><button>🔄 Jogar Novamente</button></a>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        sessionStorage.removeItem('usuarioLogado');
+        sessionStorage.removeItem('pontuacaoFinal');
+    });
+</script>
+
+</body>
+</html>

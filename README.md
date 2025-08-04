@@ -1,6 +1,6 @@
-# Show do Bilhão - Jogo de Perguntas e Respostas
+# Show do Milhão - Jogo de Perguntas e Respostas
 
-Este projeto implementa um jogo de perguntas e respostas baseado no formato do programa **"Show do Bilhão"**. O objetivo é que um jogador responda corretamente a uma sequência de perguntas de conhecimento geral, acumulando pontos a cada acerto. O jogo termina quando o jogador erra uma resposta.
+Este projeto implementa um jogo de perguntas e respostas baseado no formato do programa **"Show do Milhão"**. O objetivo é que um jogador responda corretamente a uma sequência de perguntas de conhecimento geral, acumulando pontos a cada acerto. O jogo termina quando o jogador erra uma resposta.
 
 ---
 
