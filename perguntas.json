@@ -10,8 +10,93 @@
         "resposta": 1
     },
     {
-        "enunciado": "Qual elemento químico tem o símbolo 'O'?",
-        "alternativas": ["Ouro", "Oxigênio", "Ósmio", "Ozônio"],
+        "enunciado": "Qual elemento químico tem o símbolo 'Au'?",
+        "alternativas": ["Prata", "Ouro", "Argônio", "Alumínio"],
         "resposta": 1
+    },
+    {
+        "enunciado": "Em que ano o homem pisou na Lua pela primeira vez?",
+        "alternativas": ["1965", "1969", "1972", "1981"],
+        "resposta": 1
+    },
+    {
+        "enunciado": "Qual o maior planeta do Sistema Solar?",
+        "alternativas": ["Terra", "Marte", "Júpiter", "Saturno"],
+        "resposta": 2
+    },
+    {
+        "enunciado": "Quem pintou a Mona Lisa?",
+        "alternativas": ["Vincent van Gogh", "Pablo Picasso", "Michelangelo", "Leonardo da Vinci"],
+        "resposta": 3
+    },
+    {
+        "enunciado": "Quantos continentes existem na Terra?",
+        "alternativas": ["5", "6", "7", "8"],
+        "resposta": 1
+    },
+    {
+        "enunciado": "Qual oceano banha a costa leste do Brasil?",
+        "alternativas": ["Pacífico", "Índico", "Ártico", "Atlântico"],
+        "resposta": 3
+    },
+    {
+        "enunciado": "Qual é a montanha mais alta do mundo?",
+        "alternativas": ["Monte Everest", "K2", "Kangchenjunga", "Lhotse"],
+        "resposta": 0
+    },
+    {
+        "enunciado": "De quem é a famosa frase 'Penso, logo existo'?",
+        "alternativas": ["Platão", "Sócrates", "René Descartes", "Aristóteles"],
+        "resposta": 2
+    },
+    {
+        "enunciado": "Qual o livro mais vendido no mundo, depois da Bíblia?",
+        "alternativas": ["O Senhor dos Anéis", "Dom Quixote", "O Pequeno Príncipe", "Harry Potter e a Pedra Filosofal"],
+        "resposta": 1
+    },
+    {
+        "enunciado": "Qual a velocidade da luz no vácuo (aproximadamente)?",
+        "alternativas": ["300.000 km/h", "300.000 km/s", "150.000 km/s", "500.000 km/s"],
+        "resposta": 1
+    },
+    {
+        "enunciado": "Qual destes países não faz fronteira com o Brasil?",
+        "alternativas": ["Colômbia", "Chile", "Argentina", "Uruguai"],
+        "resposta": 1
+    },
+    {
+        "enunciado": "Em qual período da pré-história o fogo foi descoberto?",
+        "alternativas": ["Neolítico", "Paleolítico", "Idade dos Metais", "Mesolítico"],
+        "resposta": 1
+    },
+    {
+        "enunciado": "Qual o nome do processo de conversão de luz solar em energia pelas plantas?",
+        "alternativas": ["Respiração", "Metabolismo", "Fotossíntese", "Evolução"],
+        "resposta": 2
+    },
+    {
+        "enunciado": "Qual foi a primeira civilização a usar a escrita?",
+        "alternativas": ["Egípcios", "Gregos", "Sumérios", "Romanos"],
+        "resposta": 2
+    },
+    {
+        "enunciado": "Quantos ossos tem o corpo humano adulto?",
+        "alternativas": ["206", "210", "198", "250"],
+        "resposta": 0
+    },
+    {
+        "enunciado": "Qual o plural de 'cidadão'?",
+        "alternativas": ["Cidadãos", "Cidadões", "Cidades", "Cidadães"],
+        "resposta": 0
+    },
+    {
+        "enunciado": "Quem foi o primeiro presidente do Brasil?",
+        "alternativas": ["Getúlio Vargas", "Prudente de Morais", "Dom Pedro II", "Deodoro da Fonseca"],
+        "resposta": 3
+    },
+    {
+        "enunciado": "Qual o nome do principal antagonista na saga 'Harry Potter'?",
+        "alternativas": ["Draco Malfoy", "Severus Snape", "Lord Voldemort", "Sirius Black"],
+        "resposta": 2
     }
 ]

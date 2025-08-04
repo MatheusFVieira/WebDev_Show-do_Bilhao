@@ -1,27 +1,41 @@
 document.addEventListener("DOMContentLoaded", async () => {
     // 1. VERIFICAÇÃO INICIAL E PREPARAÇÃO
-    // Verifica se há um usuário logado no sessionStorage. Se não, volta para a tela de login.
     if (!sessionStorage.getItem("usuarioLogado")) {
         window.location.href = "index.html";
-        return; // Para a execução do script
+        return;
     }
     
-    // Pega as referências dos elementos HTML que vamos manipular
     const enunciadoElement = document.getElementById("enunciado");
     const alternativasForm = document.getElementById("alternativas-form");
     const alternativasContainer = document.getElementById("alternativas-container");
     const pontuacaoElement = document.getElementById("pontuacao-atual");
     const logoutButton = document.getElementById("logout-button");
 
-    let perguntas = [];
-    let perguntaAtualIndex = 0;
-    let pontuacao = 0;
+    let todasPerguntas = [];
+    let perguntasDoJogo = [];
+    let perguntaAtualIndex = 0; // Agora controla o índice de 0 a 9
+    const totalPerguntasParaVencer = 10;
 
-    // Função para carregar as perguntas do arquivo JSON
-    async function carregarPerguntas() {
+    // Função para embaralhar um array (Algoritmo de Fisher-Yates)
+    function embaralharArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]]; // Troca os elementos
+        }
+    }
+
+    // Função para carregar e preparar as perguntas
+    async function prepararJogo() {
         try {
-            const response = await fetch("perguntas.json"); // Busca o arquivo
-            perguntas = await response.json(); // Converte a resposta em JSON
+            const response = await fetch("perguntas.json");
+            todasPerguntas = await response.json();
+            
+            // Embaralha todas as perguntas carregadas
+            embaralharArray(todasPerguntas);
+            
+            // Pega as 10 primeiras perguntas do array embaralhado
+            perguntasDoJogo = todasPerguntas.slice(0, totalPerguntasParaVencer);
+
         } catch (error) {
             console.error("Erro ao carregar as perguntas:", error);
             enunciadoElement.textContent = "Não foi possível carregar o jogo. Tente novamente.";
@@ -29,37 +43,28 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     // 2. LÓGICA DE EXIBIÇÃO
-    // Função para mostrar a pergunta na tela
     function exibirPergunta() {
-        // Verifica se o jogo acabou (não há mais perguntas)
-        if (perguntaAtualIndex >= perguntas.length) {
-            finalizarJogo(true); // Finaliza o jogo com vitória
-            return;
-        }
-
         // Limpa as alternativas da pergunta anterior
         alternativasContainer.innerHTML = "";
         
-        // Pega a pergunta atual
-        const pergunta = perguntas[perguntaAtualIndex];
+        const pergunta = perguntasDoJogo[perguntaAtualIndex];
         
-        // Atualiza os textos na tela
         enunciadoElement.textContent = pergunta.enunciado;
-        pontuacaoElement.textContent = pontuacao;
+        // A pontuação agora mostra o progresso (Ex: 1 / 10)
+        pontuacaoElement.textContent = `${perguntaAtualIndex + 1} / ${totalPerguntasParaVencer}`;
 
-        // Cria os botões de rádio para cada alternativa
         pergunta.alternativas.forEach((alternativa, index) => {
             const input = document.createElement("input");
             input.type = "radio";
             input.name = "resposta";
             input.value = index;
             input.id = `alt-${index}`;
+            input.required = true; // Torna obrigatório escolher uma opção
 
             const label = document.createElement("label");
             label.htmlFor = `alt-${index}`;
             label.textContent = alternativa;
 
-            // Adiciona o input e o label no container de alternativas
             const div = document.createElement("div");
             div.appendChild(input);
             div.appendChild(label);
@@ -68,52 +73,42 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     // 3. LÓGICA DE RESPOSTA E PONTUAÇÃO
-    // Função para verificar a resposta escolhida pelo usuário
     function verificarResposta(event) {
-        event.preventDefault(); // Previne o recarregamento da página
+        event.preventDefault();
 
         const respostaSelecionada = alternativasForm.querySelector('input[name="resposta"]:checked');
-
-        // Se nenhuma resposta foi selecionada, não faz nada
-        if (!respostaSelecionada) {
-            alert("Por favor, escolha uma alternativa!");
-            return;
-        }
-
-        const respostaCorreta = perguntas[perguntaAtualIndex].resposta;
+        
+        const respostaCorreta = perguntasDoJogo[perguntaAtualIndex].resposta;
         const respostaDoUsuario = parseInt(respostaSelecionada.value);
 
         if (respostaDoUsuario === respostaCorreta) {
-            // Se acertou, aumenta a pontuação e vai para a próxima pergunta
-            pontuacao++;
+            // Se acertou, avança para a próxima pergunta
             perguntaAtualIndex++;
-            exibirPergunta();
+            
+            // Verifica se o jogador venceu
+            if (perguntaAtualIndex >= totalPerguntasParaVencer) {
+                window.location.href = "vitoria.html";
+            } else {
+                exibirPergunta();
+            }
+
         } else {
-            // Se errou, finaliza o jogo
-            finalizarJogo(false);
+            // Se errou, vai para a tela de game over
+            // Salva a pontuação (quantas acertou antes de errar)
+            sessionStorage.setItem("pontuacaoFinal", perguntaAtualIndex);
+            window.location.href = "gameover.html";
         }
     }
     
-    // Função para lidar com o fim do jogo
-    function finalizarJogo() {
-        // Salva a pontuação final no sessionStorage para a tela de game over poder ler
-        sessionStorage.setItem("pontuacaoFinal", pontuacao);
-        // Redireciona para a tela de game over
-        window.location.href = "gameover.html";
-    }
-
-    // Função de logout
     function fazerLogout() {
-        sessionStorage.clear(); // Limpa todos os dados da sessão
+        sessionStorage.clear();
         window.location.href = "index.html";
     }
 
-
     // 4. INICIALIZAÇÃO DO JOGO
-    await carregarPerguntas(); // Espera as perguntas carregarem
-    exibirPergunta(); // Exibe a primeira pergunta
+    await prepararJogo(); // Espera as perguntas carregarem e serem embaralhadas
+    exibirPergunta(); // Exibe a primeira pergunta do desafio
 
-    // Adiciona os "ouvintes" de eventos para o formulário e o botão de logout
     alternativasForm.addEventListener("submit", verificarResposta);
     logoutButton.addEventListener("click", fazerLogout);
 });
